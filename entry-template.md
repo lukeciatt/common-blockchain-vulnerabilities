@@ -2,12 +2,14 @@
 
 Short description of the vulnerability
 
-### ID: CBV-template
-### Scope: Consensus/VM/etc
+### ID: CBV-1
+### Blockchain: Bitcoin, Ethereum, etc
+### Version affected: 0.14.3, 0.15.2, 0.16.3, etc
+### Component: Consensus/VM/etc
 ### Severity: From 1.0 to 10.0
-### Labels: -
-### Vulnerability Type: CWE Reference
-### Reproduction Test: issue.py
+### Labels: - (Optional)
+### Vulnerability Type: CWE Reference (Optional)
+### Reproduction Test: issue.py (Optional)
 
 ## Details
 
@@ -17,6 +19,6 @@ Details of the issue
 
 Fix recommnedations
 
-## References
+## References (Optional)
 
-## Aditional Comments
+## Aditional Comments (Optional)

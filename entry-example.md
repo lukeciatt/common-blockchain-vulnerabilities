@@ -3,11 +3,11 @@
 There is a out-if-bonds array read in `CheckProofOfStake` which can crash the application.
 
 ### ID: CBV-108
-### Scope: Block validation
+### Blockchain: Bitcoin
+### Version affected: 0.14.3
+### Component: Block validation
 ### Severity: 9.0
-### Labels: -
 ### Vulnerability Type: Out-of-bounds read (denial of service)
-### Reproduction Test: [issues_reproduction/coinstake_dos.py](https://github.com/hknio/L1-audit-indxcoin/blob/main/issues_reproduction/coinstake_dos.py)
 
 ## Details
 
