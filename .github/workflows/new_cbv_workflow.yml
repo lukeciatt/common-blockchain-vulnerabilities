@@ -1,0 +1,33 @@
+name: Store new CBV in DB
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  update-CBV-index:
+    name: folder scan
+    runs-on: ubuntu-20.04
+    permissions: write-all
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+    
+      - name: Setup deno
+        uses: denoland/setup-deno@v1
+        with:
+          deno-version: "1.29.1"
+
+      - name: Deno run
+        id: deno
+        run: |
+          deno run --allow-write --allow-read --allow-env --allow-net .github/scripts/mod.ts "${{ toJSON(github.event.issue.labels.*.name) }}" "${{ github.event.issue.body }}"  ${{ secrets.API_KEY_1 }} ${{ secrets.API_KEY_2 }} ${{ secrets.API_ENDPOINT }} > DENO_OUTPUT.txt
+    
+      - name: Commit files
+        run: .github/scripts/commit.sh
+      
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          branch: main
