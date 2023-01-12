@@ -1,0 +1,138 @@
+name: New CBV
+description: File a new vulnerability to CBV database
+title: "[Submit: ]: "
+labels: ["CBV"]
+assignees:
+  - octocat
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for contributing with this project!
+  # title.header
+  - type: input
+    id: header
+    attributes:
+      label: Title
+      description: Introduce vulnerability Title
+      placeholder: Your proposed title
+    validations:
+      required: true
+  # title.description
+  - type: textarea
+    id: description
+    attributes:
+      label: Short description
+      description: Please enter a summary of the vulnerability
+      placeholder: Here you should place a brief description of the vulnerability
+    validations:
+      required: true
+  # id - should be generated after issue resolution
+  # blockchain
+  - type: dropdown
+    id: blockchain
+    attributes:
+      label: Blockchain
+      description: What blockchain is been affected by this vulnerability? Multiple selection is enable
+      multiple: true
+      options:
+        - Bitcoin
+        - Ethereum
+        - Polygon
+        - Polkadot
+    validations:
+      required: true
+  # version_affected
+  - type: input
+    id: version_affected
+    attributes:
+      label: Version affected
+      description: Wich version of the blockchain is been affected by this vulnerability?
+      placeholder: i.e. Bitcoin Core 0.14.x before 0.14.3, 0.15.x before 0.15.2, and 0.16.x before 0.16.3 and Bitcoin Knots 0.14.x through 0.16.x before 0.16.3
+    validations:
+      required: true
+  # component
+  - type: input
+    id: component
+    attributes:
+      label: Component
+      description: Wich component of the blockchain is been affected by this vulnerability?
+      placeholder: i.e. Consensus/VM/etc
+    validations:
+      required: true
+  # severity
+  - type: input
+    id: severity
+    attributes:
+      label: Severity
+      description: The severity of this vulnerability from 1.0 to 10.0
+      placeholder:  "6.0"
+    validations:
+      required: true
+  # vulnerability_type
+  - type: input
+    id: vulnerability_type
+    attributes:
+      label: Vulnerability Type
+      description: What time of vulnerability is been exploited?
+      placeholder:  i.e. Denial of service
+    validations:
+      required: true
+  # details
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: Please enter a complete explaination of this vulnerability
+      placeholder: A complete and detailed explanation should be written here
+    validations:
+      required: true
+  # recommendation
+  - type: textarea
+    id: recommendation
+    attributes:
+      label: Recommendation
+      description: Please enter your recommendations to solve this vulnerability
+      placeholder: A complete and detailed explanation should be written here
+    validations:
+      required: true
+  # references
+  - type: textarea
+    id: references
+    attributes:
+      label: References
+      description: Share your references or documentation with de community
+      placeholder: List your sources
+  # labels
+  - type: dropdown
+    id: labels
+    attributes:
+      label: Labels
+      description: Add some aditional labels for future search queries. Multiple selection is enable
+      multiple: true
+      options:
+        - Layer 1
+        - Layer 2
+  # tests
+  - type: textarea
+    id: tests
+    attributes:
+      label: Test
+      description: Share code to test, display or fix the vulnerability
+      placeholder: Go nuts here
+  # aditional_comments
+  - type: textarea
+    id: aditional_comments
+    attributes:
+      label: Aditional comments
+      description: Share any additional thought that you have about this vulnerability
+      placeholder: Go nuts here
+  #
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Code of Conduct
+      description: By submitting this issue, you agree to follow our [Code of Conduct](https://example.com)
+      options:
+        - label: I agree to follow this project's Code of Conduct
+          required: true
